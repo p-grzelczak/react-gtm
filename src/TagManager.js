@@ -39,8 +39,8 @@ const TagManager = {
       preview
     })
     if (dataLayer) document.head.appendChild(gtm.dataScript)
-    document.head.appendChild(gtm.script())
-    document.body.appendChild(gtm.noScript())
+    document.head.prepend(gtm.script())
+    document.body.prepend(gtm.noScript())
   },
   dataLayer: function ({dataLayer, dataLayerName = 'dataLayer'}) {
     const snippets = Snippets.dataLayer(dataLayer, dataLayerName)
